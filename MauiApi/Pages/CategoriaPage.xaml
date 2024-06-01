@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApi.Pages.CategoriaPage"
+             Title="Categoria">
+    <VerticalStackLayout>
+        <SearchBar x:Name="busquedaBox" TextChanged="OnTextChanged" Text="{x:Binding search}" Margin="20"/>
+        <ListView x:Name="lstCategorias" Margin="20"
+                  ItemsSource="{Binding lista.Categorias}"
+                  ItemTapped="lstCategorias_ItemTapped"
+                  ItemSelected="lstCategorias_ItemSelected">
+            <!--SelectedItem="{Binding objCategoria}"-->
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <!--<TextCell Text="{Binding Nombre}"/>-->
+                    <ImageCell ImageSource="{Binding Imagen}" 
+                               Text="{Binding Nombre}"
+                               Detail="{Binding Descripcion}"
+                               />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </VerticalStackLayout>
+</ContentPage>

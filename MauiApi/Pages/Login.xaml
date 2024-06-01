@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApi.Pages.Login"
+             Title="Login">
+    <VerticalStackLayout >
+        <Image 
+            Source="dotnet_bot"
+            HeightRequest="150"
+            Margin="0, 50"
+            />
+        <Label 
+            Text="Usuario"
+            VerticalOptions="Start" 
+            HorizontalOptions="Start"
+            Margin="20, 0"/>
+        <Entry Placeholder="Ingresa el usuario" Text="{Binding loginModel.Username}"
+               Margin="20,0"/>
+        <Label 
+            Text="Contraseña"
+            VerticalOptions="Center" 
+            HorizontalOptions="Start" 
+            Margin="20, 10, 0, 0"/>
+        <Entry  Text="{Binding loginModel.Password}"
+                Placeholder="Ingresa la contraseña"
+                IsPassword="True"
+                Margin="20, 0"/>
+
+        <HorizontalStackLayout HorizontalOptions="CenterAndExpand" Margin="0,30">
+            <Button Text="Ingresar" 
+                    Margin="2" 
+                    x:Name="btnIngresar"
+                    Clicked="OnIngresar"/>
+            <Button Text="Registrar"
+                    Margin="2"
+                    x:Name="btnRegistrar"
+                    Clicked="OnRegistrar"/>
+        </HorizontalStackLayout>
+
+    </VerticalStackLayout>
+</ContentPage>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApi.Pages.ProductoPage"
+             Title="ProductoPage">
+    <VerticalStackLayout>
+        <Label
+            Text="{Binding Categoria.Nombre}"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <ListView x:Name="lstProductos" Margin="20" ItemsSource="{Binding lista.Productos}"
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Nombre}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </VerticalStackLayout>
+</ContentPage>
